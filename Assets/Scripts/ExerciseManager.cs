@@ -30,6 +30,10 @@ namespace MoveToCode {
             LoggingManager.instance.AddLogColumn(exerciseSubmissionResultCol, "");
         }
 
+        public int GetCurExcercisePos() {
+            return curExercisePos;
+        }
+
         private void SetUpCurExercise(int exerciseNum) {
             string json = File.ReadAllText(fileEntries[exerciseNum]);
             GameObject exercise = InstantiateExercise(json);
@@ -89,8 +93,9 @@ namespace MoveToCode {
         }
 
         private void InitiateFreePlay() {
-            Debug.Log("Free play woould be initiated");
+            Debug.Log("Free play would be initiated");
             curExercise = FreePlay;
+            CodeBlockMenuManager.instance.TurnMenuOn();
             ToggleCurrentExercise(true);
         }
 

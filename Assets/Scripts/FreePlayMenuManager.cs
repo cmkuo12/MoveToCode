@@ -66,7 +66,18 @@ namespace MoveToCode {
         public void InstanstiateSetVariableCodeBlock() {
             InstantiateBlock(setVarBlock);
         }
-        public void InstanstiateStringCodeBlock() {
+        public void InstanstiateStringCodeBlockMove() {
+            stringBlock.GetComponent<StringCodeBlock>().SetOutput("Move");
+            InstantiateBlock(stringBlock);
+        }
+        public void InstanstiateStringCodeBlockTo() {
+            stringBlock.GetComponent<StringCodeBlock>().SetOutput("To");
+
+            InstantiateBlock(stringBlock);
+        }
+        public void InstanstiateStringCodeBlockCode() {
+            stringBlock.GetComponent<StringCodeBlock>().SetOutput("Code");
+
             InstantiateBlock(stringBlock);
         }
         public void InstanstiateWhileCodeBlock() {
